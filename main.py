@@ -8,6 +8,11 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    # Defining groups:
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable, drawable)
+
     clock = pygame.time.Clock()
     dt = 0
 
@@ -19,13 +24,14 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        # Player controls
-        player_ship.update(dt)
+        # Update all updatable objects player controls etc...
+        updatable.update(dt)
 
         screen.fill("black")
 
-        # Draw player
-        player_ship.draw(screen)
+        # Draw all drawables
+        for thing_to_draw in drawable:
+            thing_to_draw.draw(screen)
         pygame.display.flip()
 
         # End of loop actions
