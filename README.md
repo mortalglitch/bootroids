@@ -2,7 +2,7 @@
 
 If I get time I will expand on this project and see if I can make it into a full game.
 
-Ideas the lessons suggested to expand it. 
+Ideas the lessons suggested to expand it.
 
 Add a scoring system
 Implement multiple lives and respawning
