@@ -43,6 +43,11 @@ def main():
                 print("Game over!")
                 sys.exit()
 
+            for bullet in shots:
+                if current_asteroid.is_colliding(bullet):
+                    current_asteroid.split()
+                    bullet.kill()
+
         screen.fill("black")
 
         # Draw all drawables
