@@ -19,6 +19,9 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
+        # Player controls
+        player_ship.update(dt)
+
         screen.fill("black")
 
         # Draw player
