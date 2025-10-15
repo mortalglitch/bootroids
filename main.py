@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 from asteroid import Asteroid
 from constants import *
@@ -32,6 +33,12 @@ def main():
 
         # Update all updatable objects player controls etc...
         updatable.update(dt)
+
+        # Collision check for player
+        for current_asteroid in asteroids:
+            if current_asteroid.is_colliding(player_ship):
+                print("Game over!")
+                sys.exit()
 
         screen.fill("black")
 
